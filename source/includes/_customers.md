@@ -271,6 +271,10 @@ account_number | - | Bank account number
 address | - | Customer address parameters
 customer_type | - | Personal or Business
 
+<aside class="notice">
+The <code>custom_identifier</code> field can be excluded, in which case it will be set to <code>null</code>.
+</aside>
+
 ## Update A Customer via PATCH
 
 ```canadian
