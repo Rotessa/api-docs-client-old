@@ -6,7 +6,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - united_states: United States
 
 toc_footers:
-  - <a href='#'>Sign Up to acquire a developer key</a>
+  - <a href='https://sandbox.rotessa.com/join'>Sign Up to acquire a developer key</a>
 
 includes:
   - introduction
