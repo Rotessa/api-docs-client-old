@@ -14,9 +14,9 @@ Customers represent individual customer accounts from which you wish to withdraw
  bank_name  | Bank name
  institution_number  | Bank institution number for Canadian customers
  transit_number  | Bank transit number for Canadian customers
- routing_number | Bank routing number for American customers
  bank_account_type | "Savings" or "Checking" for American customers
  authorization_type | "In Person", "Online", or "Phone" for American customers
+ routing_number | Bank routing number for American customers
  account_number  | Bank account number
  address  | Customer address
  transaction_schedules  | A list of transaction schedule objects describing the customer’s payment schedules
@@ -192,7 +192,7 @@ curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=
 ```
 
 ```united_states
-curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"custom_identifier": "test api", "email": "test@rotessa.com", "name": "Mike Smith", "bank_name": "Scotiabank", "routing_number": "111111111", "bank_account_type": "Checking", "authorization_type": "Phone","account_number": "11111111", "address": { "address_1": "123 Main Street", "address_2": "Unit 4", "city": "Birmingham", "province_code": "AL", "postal_code": "36016" }}' <rotessa_endpoint>/customers.json
+curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"custom_identifier": "test api", "email": "test@rotessa.com", "name": "Mike Smith", "bank_name": "Scotiabank", "bank_account_type": "Checking", "authorization_type": "Phone", "routing_number": "111111111", "account_number": "11111111", "address": { "address_1": "123 Main Street", "address_2": "Unit 4", "city": "Birmingham", "province_code": "AL", "postal_code": "36016" }}' <rotessa_endpoint>/customers.json
 ```
 
 > The above command returns JSON structured like this:

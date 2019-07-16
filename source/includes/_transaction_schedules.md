@@ -7,7 +7,7 @@ A customer must have bank information complete in order to make a transaction sc
 <br/>
 Canadian customers require <code>institution_number</code>, <code>transit_number</code>, and <code>account_number</code>.
 <br/>
-American customers require <code>routing_number</code>, <code>bank_account_type</code>, <code>authorization_type</code>, and <code>account_number</code>.
+American customers require <code>bank_account_type</code>, <code>authorization_type</code>, <code>routing_number</code>, and <code>account_number</code>.
 </aside>
 
 Parameter  | Description 
@@ -120,7 +120,7 @@ A customer must have bank information complete in order to make a transaction sc
 <br/>
 Canadian customers require <code>institution_number</code>, <code>transit_number</code>, and <code>account_number</code>.
 <br/>
-American customers require <code>routing_number</code>, <code>bank_account_type</code>, <code>authorization_type</code>, and <code>account_number</code>.
+American customers require <code>bank_account_type</code>, <code>authorization_type</code>, <code>routing_number</code>, and <code>account_number</code>.
 </aside>
 
 ## Create A Transaction Schedule with Custom Identifier
@@ -172,7 +172,7 @@ A customer must have bank information complete in order to make a transaction sc
 <br/>
 Canadian customers require <code>institution_number</code>, <code>transit_number</code>, and <code>account_number</code>.
 <br/>
-American customers require <code>routing_number</code>, <code>bank_account_type</code>, <code>authorization_type</code>, and <code>account_number</code>.
+American customers require <code>bank_account_type</code>, <code>authorization_type</code>, <code>routing_number</code>, and <code>account_number</code>.
 </aside>
 
 ## Update A Specific Transaction Schedule with Custom Identifier
