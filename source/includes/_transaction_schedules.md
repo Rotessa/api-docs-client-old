@@ -2,6 +2,14 @@
 
 Transaction schedules are the method by which recurring or one time payments are scheduled in Rotessa for a customer. Payments require a schedule date, which must be at least 2 business days in the future, as well as a frequency.
 
+<aside class="notice">
+A customer must have bank information complete in order to make a transaction schedule for them. 
+<br/>
+Canadian customers require <code>institution_number</code>, <code>transit_number</code>, and <code>account_number</code>.
+<br/>
+American customers require <code>bank_account_type</code>, <code>authorization_type</code>, <code>routing_number</code>, and <code>account_number</code>.
+</aside>
+
 Parameter  | Description 
  ------------- | ------------- 
 ID | ID of the transaction schedule. 
@@ -107,6 +115,14 @@ comment | Optional comment for schedule
 When creating schedules you must specify a process date of at least 2 business days in the future.
 </aside>
 
+<aside class="notice">
+A customer must have bank information complete in order to make a transaction schedule for them. 
+<br/>
+Canadian customers require <code>institution_number</code>, <code>transit_number</code>, and <code>account_number</code>.
+<br/>
+American customers require <code>bank_account_type</code>, <code>authorization_type</code>, <code>routing_number</code>, and <code>account_number</code>.
+</aside>
+
 ## Create A Transaction Schedule with Custom Identifier
 
 ```shell
@@ -149,6 +165,14 @@ comment | Optional comment for schedule
 
 <aside class="notice">
 When creating schedules you must specify a process date of at least 2 business days in the future.
+</aside>
+
+<aside class="notice">
+A customer must have bank information complete in order to make a transaction schedule for them. 
+<br/>
+Canadian customers require <code>institution_number</code>, <code>transit_number</code>, and <code>account_number</code>.
+<br/>
+American customers require <code>bank_account_type</code>, <code>authorization_type</code>, <code>routing_number</code>, and <code>account_number</code>.
 </aside>
 
 ## Update A Specific Transaction Schedule with Custom Identifier

@@ -14,6 +14,8 @@ Customers represent individual customer accounts from which you wish to withdraw
  bank_name  | Bank name
  institution_number  | Bank institution number for Canadian customers
  transit_number  | Bank transit number for Canadian customers
+ bank_account_type | "Savings" or "Checking" for American customers
+ authorization_type | "In Person", "Online", or "Phone" for American customers
  routing_number | Bank routing number for American customers
  account_number  | Bank account number
  address  | Customer address
@@ -190,7 +192,7 @@ curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=
 ```
 
 ```united_states
-curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"custom_identifier": "test api", "email": "test@rotessa.com", "name": "Mike Smith", "bank_name": "Scotiabank", "routing_number": "111111111", "account_number": "11111111", "address": { "address_1": "123 Main Street", "address_2": "Unit 4", "city": "Birmingham", "province_code": "AL", "postal_code": "36016" }}' <rotessa_endpoint>/customers.json
+curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"custom_identifier": "test api", "email": "test@rotessa.com", "name": "Mike Smith", "bank_name": "Scotiabank", "bank_account_type": "Checking", "authorization_type": "Phone", "routing_number": "111111111", "account_number": "11111111", "address": { "address_1": "123 Main Street", "address_2": "Unit 4", "city": "Birmingham", "province_code": "AL", "postal_code": "36016" }}' <rotessa_endpoint>/customers.json
 ```
 
 > The above command returns JSON structured like this:
@@ -266,6 +268,8 @@ cell_phone | - | Cell phone number
 bank_name | - | Bank name of customer
 institution_number | - | Bank institution number for Canadian customers
 transit_number | - | Bank transit number for Canadian customers
+bank_account_type | - | "Savings" or "Checking" for American customers
+authorization_type | - | "In Person", "Online", or "Phone" for American customers
 routing_number | - | Routing number for American customers
 account_number | - | Bank account number
 address | - | Customer address parameters
@@ -377,7 +381,7 @@ Parameter  | Description
  ------------- | ------------- 
 ID | The ID of the customer to retrieve
 
-## Update A Customer via PST
+## Update A Customer via POST
 
 ```canadian
 curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"id": 1, "custom_identifier": "new custom identifier", "email": "test@rotessa.com", "name": "MADE WITH API 4040", "bank_name": "Scotiabank", "transit_number": "11111", "institution_number": "333", "account_number": "23123132", "address": { "address_1": "123 Main Street", "address_2": "Unit 4", "city": "Toronto", "province_code": "QC", "postal_code": "M1B 0B7" }}' <rotessa_endpoint>/customers/update_via_post.json | python -m json.tool
