@@ -268,9 +268,9 @@ cell_phone | - | Cell phone number
 bank_name | - | Bank name of customer
 institution_number | - | Bank institution number for Canadian customers
 transit_number | - | Bank transit number for Canadian customers
-routing_number | - | Routing number for American customers
 bank_account_type | - | "Savings" or "Checking" for American customers
 authorization_type | - | "In Person", "Online", or "Phone" for American customers
+routing_number | - | Routing number for American customers
 account_number | - | Bank account number
 address | - | Customer address parameters
 customer_type | - | Personal or Business
