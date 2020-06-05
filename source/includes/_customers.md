@@ -25,7 +25,7 @@ Customers represent individual customer accounts from which you wish to withdraw
 ## Get All Customers
 
 ```shell
-curl "<rotessa_endpoint>/customers.json" -H "Authorization: Token token=\"<api_key>\""
+curl "<rotessa_endpoint>/customers" -H "Authorization: Token token=\"<api_key>\""
 ```
 
 > The above command returns JSON structured like this:
@@ -121,7 +121,7 @@ If you’re not using an administrator API key, note that some customers will re
 
 ### HTTP REQUEST
 
-`GET https://api.rotessa.com/v1/customers/<ID>.json`
+`GET https://api.rotessa.com/v1/customers/<ID>`
 
 ### URL PARAMETERS
 
@@ -133,7 +133,7 @@ ID  | The ID of the customer to retrieve
 ## Get a Specific Customer Based on Custom Identifier
 
 ```shell
-curl -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"custom_identifier": "MIKEY"}' <rotessa_endpoint>/customers/show_with_custom_identifier.json | python -m json.tool
+curl -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"custom_identifier": "MIKEY"}' <rotessa_endpoint>/customers/show_with_custom_identifier | python -m json.tool
 ```
 
 > The above command returns JSON structured like this:
@@ -177,7 +177,7 @@ If you’re not using an administrator API key, note that some customers will re
 
 ### HTTP REQUEST
 
-`GET https://api.rotessa.com/v1/customers/show_with_custom_identifier.json`
+`GET https://api.rotessa.com/v1/customers/show_with_custom_identifier`
 
 ### URL PARAMETERS
 
@@ -188,11 +188,11 @@ custom_identifier | The ID of the customer to retrieve
 ## Create A Customer
 
 ```canadian
-curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"custom_identifier": "newID111", "email": "mikesmith@test.com", "name": "Mike Smith", "bank_name": "Scotiabank", "transit_number": "11111", "institution_number": "111", "account_number": "11111111", "address": { "address_1": "123 Main Street", "address_2": "Unit 4", "city": "Toronto", "province_code": "ON", "postal_code": "M1B 0B7" }}' <rotessa_endpoint>/customers.json
+curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"custom_identifier": "newID111", "email": "mikesmith@test.com", "name": "Mike Smith", "bank_name": "Scotiabank", "transit_number": "11111", "institution_number": "111", "account_number": "11111111", "address": { "address_1": "123 Main Street", "address_2": "Unit 4", "city": "Toronto", "province_code": "ON", "postal_code": "M1B 0B7" }}' <rotessa_endpoint>/customers
 ```
 
 ```united_states
-curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"custom_identifier": "test api", "email": "test@rotessa.com", "name": "Mike Smith", "bank_name": "Scotiabank", "bank_account_type": "Checking", "authorization_type": "Phone", "routing_number": "111111111", "account_number": "11111111", "address": { "address_1": "123 Main Street", "address_2": "Unit 4", "city": "Birmingham", "province_code": "AL", "postal_code": "36016" }}' <rotessa_endpoint>/customers.json
+curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"custom_identifier": "test api", "email": "test@rotessa.com", "name": "Mike Smith", "bank_name": "Scotiabank", "bank_account_type": "Checking", "authorization_type": "Phone", "routing_number": "111111111", "account_number": "11111111", "address": { "address_1": "123 Main Street", "address_2": "Unit 4", "city": "Birmingham", "province_code": "AL", "postal_code": "36016" }}' <rotessa_endpoint>/customers
 ```
 
 > The above command returns JSON structured like this:
@@ -282,11 +282,11 @@ The <code>custom_identifier</code> field can be excluded, in which case it will 
 ## Update A Customer via PATCH
 
 ```canadian
-curl -X PATCH -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"custom_identifier": "MIKEY", "email": "test@rotessa.com", "name": "Mike Smith", "bank_name": "Scotiabank", "transit_number": "11111", "institution_number": "333", "account_number": "23123132", "customer_type": "Personal", "address": { "address_1": "123 Main Street", "address_2": "Unit 4", "city": "Toronto", "province_code": "QC", "postal_code": "M1B 0B7" }}' <rotessa_endpoint>/customers/<id>.json
+curl -X PATCH -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"custom_identifier": "MIKEY", "email": "test@rotessa.com", "name": "Mike Smith", "bank_name": "Scotiabank", "transit_number": "11111", "institution_number": "333", "account_number": "23123132", "customer_type": "Personal", "address": { "address_1": "123 Main Street", "address_2": "Unit 4", "city": "Toronto", "province_code": "QC", "postal_code": "M1B 0B7" }}' <rotessa_endpoint>/customers/<id>
 ```
 
 ```united_states
-curl -X PATCH -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"custom_identifier": "MIKEY", "email": "test@rotessa.com", "name": "Mike Smith", "bank_name": "Scotiabank", "routing_number": "111111111", "account_number": "23123132", "customer_type": "Personal", "address": { "address_1": "123 Main Street", "address_2": "Unit 4", "city": "Birmingham", "province_code": "AL", "postal_code": "36016" }}' <rotessa_endpoint>/customers/<id>.json
+curl -X PATCH -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"custom_identifier": "MIKEY", "email": "test@rotessa.com", "name": "Mike Smith", "bank_name": "Scotiabank", "routing_number": "111111111", "account_number": "23123132", "customer_type": "Personal", "address": { "address_1": "123 Main Street", "address_2": "Unit 4", "city": "Birmingham", "province_code": "AL", "postal_code": "36016" }}' <rotessa_endpoint>/customers/<id>
 ```
 
 > The above command returns JSON structured like this:
@@ -373,7 +373,7 @@ This endpoint creates a new customer
 
 ### HTTP REQUEST
 
-`POST https://api.rotessa.com/v1/customers`
+`PATCH https://api.rotessa.com/v1/customers`
 
 ### URL PARAMETERS
 
@@ -384,11 +384,11 @@ ID | The ID of the customer to retrieve
 ## Update A Customer via POST
 
 ```canadian
-curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"id": 1, "custom_identifier": "new custom identifier", "email": "test@rotessa.com", "name": "MADE WITH API 4040", "bank_name": "Scotiabank", "transit_number": "11111", "institution_number": "333", "account_number": "23123132", "address": { "address_1": "123 Main Street", "address_2": "Unit 4", "city": "Toronto", "province_code": "QC", "postal_code": "M1B 0B7" }}' <rotessa_endpoint>/customers/update_via_post.json | python -m json.tool
+curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"id": 1, "custom_identifier": "new custom identifier", "email": "test@rotessa.com", "name": "MADE WITH API 4040", "bank_name": "Scotiabank", "transit_number": "11111", "institution_number": "333", "account_number": "23123132", "address": { "address_1": "123 Main Street", "address_2": "Unit 4", "city": "Toronto", "province_code": "QC", "postal_code": "M1B 0B7" }}' <rotessa_endpoint>/customers/update_via_post | python -m json.tool
 ```
 
 ```united_states
-curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"id": 1, "custom_identifier": "new custom identifier", "email": "test@rotessa.com", "name": "MADE WITH API 4040", "bank_name": "Scotiabank", "routing_number": "111111111", "account_number": "23123132", "address": { "address_1": "123 Main Street", "address_2": "Unit 4", "city": "Birmingham", "province_code": "AL", "postal_code": "36016" }}' <rotessa_endpoint>/customers/update_via_post.json | python -m json.tool
+curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"id": 1, "custom_identifier": "new custom identifier", "email": "test@rotessa.com", "name": "MADE WITH API 4040", "bank_name": "Scotiabank", "routing_number": "111111111", "account_number": "23123132", "address": { "address_1": "123 Main Street", "address_2": "Unit 4", "city": "Birmingham", "province_code": "AL", "postal_code": "36016" }}' <rotessa_endpoint>/customers/update_via_post | python -m json.tool
 ```
 
 > The above command returns JSON structured like this:
@@ -475,7 +475,7 @@ This endpoint creates a new customer
 
 ### HTTP REQUEST
 
-`POST https://api.rotessa.com/v1/customers`
+`POST https://api.rotessa.com/v1/customers/update_via_post`
 
 ### URL PARAMETERS
 
