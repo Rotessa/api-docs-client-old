@@ -84,6 +84,7 @@ curl "<rotessa_endpoint>/customers/<id>" -H "Authorization: Token token=\"<api_k
 
 ```canadian
 {
+    "account_number": "11111111"
     "active": true,
     "address": {
         "address_1": "123 Main Street",
@@ -93,6 +94,8 @@ curl "<rotessa_endpoint>/customers/<id>" -H "Authorization: Token token=\"<api_k
         "postal_code": "M1B 0B7",
         "province_code": "ON"
     },
+    "authorization_type": null,
+    "bank_account_type": null,
     "bank_name": "Scotiabank",
     "created_at": "2015-02-10T23:50:45.000-06:00",
     "custom_identifier": "Mikey",
@@ -102,15 +105,47 @@ curl "<rotessa_endpoint>/customers/<id>" -H "Authorization: Token token=\"<api_k
     "home_phone": "(204) 555 5555",
     "id": 1,
     "identifier": "Mikey",
+    "institution_number": "111",
     "name": "Mike Smith",
     "phone": "(204) 555 4444",
+    "routing_number": "",
     "transaction_schedules": [],
+    "transit_number": "11111",
     "updated_at": "2015-02-10T23:50:45.000-06:00"
 }
 ```
 
 ```united_states
-
+{
+    "account_number": "11111111"
+    "active": true,
+    "address": {
+        "address_1": "123 Main Street",
+        "address_2": "Unit 4",
+        "city": "Birmingham",
+        "id": 114397,
+        "postal_code": "36016",
+        "province_code": "AL"
+    },
+    "authorization_type": "Online",
+    "bank_account_type": "Checking",
+    "bank_name": "Scotiabank",
+    "created_at": "2015-02-10T23:50:45.000-06:00",
+    "custom_identifier": "Mikey",
+    "customer_type": "Personal",
+    "email": "mikesmith@test.com",
+    "financial_transactions": [],
+    "home_phone": "(204) 555 5555",
+    "id": 1,
+    "identifier": "Mikey",
+    "institution_number": "",
+    "name": "Mike Smith",
+    "phone": "(204) 555 4444",
+    "routing_number": "111111111",
+    "transaction_schedules": [],
+    "transit_number": "",
+    "updated_at": "2015-02-10T23:50:45.000-06:00"
+}
 ```
 
 This endpoint retrieves a specific customer.
@@ -140,15 +175,18 @@ curl -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_k
 
 ```canadian
 {
+    "account_number": "11111111"
     "active": true,
     "address": {
         "address_1": "123 Main Street",
-        "address_2": null,
+        "address_2": "Unit 4",
         "city": "Toronto",
         "id": 5,
         "postal_code": "M1B 0B7",
         "province_code": "ON"
     },
+    "authorization_type": null,
+    "bank_account_type": null,
     "bank_name": "Scotiabank",
     "created_at": "2015-02-10T23:50:45.000-06:00",
     "custom_identifier": "Mikey",
@@ -157,16 +195,48 @@ curl -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_k
     "financial_transactions": [],
     "home_phone": "(204) 555 5555",
     "id": 1,
-    "identifier": "MikeSmith0001",
+    "identifier": "Mikey",
+    "institution_number": "111",
     "name": "Mike Smith",
     "phone": "(204) 555 4444",
+    "routing_number": "",
     "transaction_schedules": [],
+    "transit_number": "11111",
     "updated_at": "2015-02-10T23:50:45.000-06:00"
 }
 ```
 
 ```united_states
-
+{
+    "account_number": "11111111"
+    "active": true,
+    "address": {
+        "address_1": "123 Main Street",
+        "address_2": "Unit 4",
+        "city": "Birmingham",
+        "id": 114397,
+        "postal_code": "36016",
+        "province_code": "AL"
+    },
+    "authorization_type": "Online",
+    "bank_account_type": "Checking",
+    "bank_name": "Scotiabank",
+    "created_at": "2015-02-10T23:50:45.000-06:00",
+    "custom_identifier": "Mikey",
+    "customer_type": "Personal",
+    "email": "mikesmith@test.com",
+    "financial_transactions": [],
+    "home_phone": "(204) 555 5555",
+    "id": 1,
+    "identifier": "Mikey",
+    "institution_number": "",
+    "name": "Mike Smith",
+    "phone": "(204) 555 4444",
+    "routing_number": "111111111",
+    "transaction_schedules": [],
+    "transit_number": "",
+    "updated_at": "2015-02-10T23:50:45.000-06:00"
+}
 ```
 
 This endpoint retrieves a specific customer based on a pre-assigned custom_identifier.
@@ -199,33 +269,40 @@ curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=
 
 ```canadian
 {
+    "account_number": "11111111"
     "active": true,
     "address": {
         "address_1": "123 Main Street",
         "address_2": "Unit 4",
         "city": "Toronto",
-        "id": 114397,
+        "id": 5,
         "postal_code": "M1B 0B7",
         "province_code": "ON"
     },
+    "authorization_type": null,
+    "bank_account_type": null,
     "bank_name": "Scotiabank",
-    "created_at": "2015-05-18T12:23:58.739-05:00",
-    "custom_identifier": "mike api test",
+    "created_at": "2015-02-10T23:50:45.000-06:00",
+    "custom_identifier": "Mikey",
     "customer_type": "Personal",
     "email": "mikesmith@test.com",
     "financial_transactions": [],
-    "home_phone": null,
+    "home_phone": "(204) 555 5555",
     "id": 1,
-    "identifier": "MIKESMIT0001",
+    "identifier": "Mikey",
+    "institution_number": "111",
     "name": "Mike Smith",
-    "phone": null,
+    "phone": "(204) 555 4444",
+    "routing_number": "",
     "transaction_schedules": [],
-    "updated_at": "2015-05-18T12:23:58.739-05:00"
+    "transit_number": "11111",
+    "updated_at": "2015-02-10T23:50:45.000-06:00"
 }
 ```
 
 ```united_states
 {
+    "account_number": "11111111"
     "active": true,
     "address": {
         "address_1": "123 Main Street",
@@ -235,19 +312,24 @@ curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=
         "postal_code": "36016",
         "province_code": "AL"
     },
+    "authorization_type": "Online",
+    "bank_account_type": "Checking",
     "bank_name": "Scotiabank",
-    "created_at": "2015-05-18T12:23:58.739-05:00",
-    "custom_identifier": "mike api test",
+    "created_at": "2015-02-10T23:50:45.000-06:00",
+    "custom_identifier": "Mikey",
     "customer_type": "Personal",
     "email": "mikesmith@test.com",
     "financial_transactions": [],
-    "home_phone": null,
+    "home_phone": "(204) 555 5555",
     "id": 1,
-    "identifier": "MIKESMIT0001",
+    "identifier": "Mikey",
+    "institution_number": "",
     "name": "Mike Smith",
-    "phone": null,
+    "phone": "(204) 555 4444",
+    "routing_number": "111111111",
     "transaction_schedules": [],
-    "updated_at": "2015-05-18T12:23:58.739-05:00"
+    "transit_number": "",
+    "updated_at": "2015-02-10T23:50:45.000-06:00"
 }
 ```
 
@@ -293,26 +375,31 @@ curl -X PATCH -H 'Content-Type: application/json' -H "Authorization: Token token
 
 ```canadian
 {
+    "account_number": "23123132"
     "active": true,
     "address": {
         "address_1": "123 Main Street",
         "address_2": "Unit 4",
         "city": "Toronto",
-        "id": 114392,
+        "id": 5,
         "postal_code": "M1B 0B7",
         "province_code": "QC"
     },
+    "authorization_type": null,
+    "bank_account_type": null,
     "bank_name": "Scotiabank",
-    "created_at": "2015-05-18T12:23:58.739-05:00",
-    "custom_identifier": "MIKEY",
+    "created_at": "2015-02-10T23:50:45.000-06:00",
+    "custom_identifier": "Mikey",
     "customer_type": "Personal",
     "email": "test@rotessa.com",
     "financial_transactions": [],
-    "home_phone": null,
+    "home_phone": "(204) 555 5555",
     "id": 1,
-    "identifier": "MIKESMIT0001",
+    "identifier": "Mikey",
+    "institution_number": "111",
     "name": "Mike Smith",
-    "phone": null,
+    "phone": "(204) 555 4444",
+    "routing_number": "",
     "transaction_schedules": [
     	{
             "amount": "123.00",
@@ -326,32 +413,38 @@ curl -X PATCH -H 'Content-Type: application/json' -H "Authorization: Token token
             "updated_at": "2019-04-16T14:40:38.000-05:00"
         }
     ],
+    "transit_number": "11111",
     "updated_at": "2015-05-18T12:23:58.739-05:00"
 }
 ```
 
 ```united_states
 {
+    "account_number": "23123132"
     "active": true,
     "address": {
         "address_1": "123 Main Street",
         "address_2": "Unit 4",
         "city": "Birmingham",
-        "id": 114392,
+        "id": 114397,
         "postal_code": "36016",
         "province_code": "AL"
     },
+    "authorization_type": "Online",
+    "bank_account_type": "Checking",
     "bank_name": "Scotiabank",
-    "created_at": "2015-05-18T12:23:58.739-05:00",
+    "created_at": "2015-02-10T23:50:45.000-06:00",
     "custom_identifier": "MIKEY",
     "customer_type": "Personal",
     "email": "test@rotessa.com",
     "financial_transactions": [],
-    "home_phone": null,
+    "home_phone": "(204) 555 5555",
     "id": 1,
-    "identifier": "MIKESMIT0001",
+    "identifier": "Mikey",
+    "institution_number": "",
     "name": "Mike Smith",
-    "phone": null,
+    "phone": "(204) 555 4444",
+    "routing_number": "111111111",
     "transaction_schedules": [
         {
             "amount": "123.00",
@@ -365,6 +458,7 @@ curl -X PATCH -H 'Content-Type: application/json' -H "Authorization: Token token
             "updated_at": "2019-04-16T14:40:38.000-05:00"
         }
     ],
+    "transit_number": "",
     "updated_at": "2015-05-18T12:23:58.739-05:00"
 }
 ```
@@ -395,26 +489,31 @@ curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=
 
 ```canadian
 {
+    "account_number": "23123132"
     "active": true,
     "address": {
         "address_1": "123 Main Street",
         "address_2": "Unit 4",
         "city": "Toronto",
-        "id": 114392,
+        "id": 5,
         "postal_code": "M1B 0B7",
         "province_code": "QC"
     },
+    "authorization_type": null,
+    "bank_account_type": null,
     "bank_name": "Scotiabank",
-    "created_at": "2015-05-18T12:23:58.739-05:00",
+    "created_at": "2015-02-10T23:50:45.000-06:00",
     "custom_identifier": "new custom identifier",
     "customer_type": "Personal",
     "email": "test@rotessa.com",
     "financial_transactions": [],
-    "home_phone": null,
+    "home_phone": "(204) 555 5555",
     "id": 1,
-    "identifier": "MIKESMIT0001",
-    "name": "Mike Smith",
-    "phone": null,
+    "identifier": "Mikey",
+    "institution_number": "333",
+    "name": "MADE WITH API 4040",
+    "phone": "(204) 555 4444",
+    "routing_number": "",
     "transaction_schedules": [
         {
             "amount": "123.00",
@@ -428,32 +527,38 @@ curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=
             "updated_at": "2019-04-16T14:40:38.000-05:00"
         }
     ],
+    "transit_number": "11111",
     "updated_at": "2015-05-18T12:23:58.739-05:00"
 }
 ```
 
 ```united_states
 {
+    "account_number": "23123132"
     "active": true,
     "address": {
         "address_1": "123 Main Street",
         "address_2": "Unit 4",
         "city": "Birmingham",
-        "id": 114392,
+        "id": 114397,
         "postal_code": "36016",
         "province_code": "AL"
     },
+    "authorization_type": "Online",
+    "bank_account_type": "Checking",
     "bank_name": "Scotiabank",
-    "created_at": "2015-05-18T12:23:58.739-05:00",
+    "created_at": "2015-02-10T23:50:45.000-06:00",
     "custom_identifier": "new custom identifier",
     "customer_type": "Personal",
     "email": "test@rotessa.com",
     "financial_transactions": [],
-    "home_phone": null,
+    "home_phone": "(204) 555 5555",
     "id": 1,
-    "identifier": "MIKESMIT0001",
-    "name": "Mike Smith",
-    "phone": null,
+    "identifier": "Mikey",
+    "institution_number": "",
+    "name": "MADE WITH API 4040",
+    "phone": "(204) 555 4444",
+    "routing_number": "111111111",
     "transaction_schedules": [
         {
             "amount": "123.00",
@@ -467,6 +572,7 @@ curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=
             "updated_at": "2019-04-16T14:40:38.000-05:00"
         }
     ],
+    "transit_number": "",
     "updated_at": "2015-05-18T12:23:58.739-05:00"
 }
 ```
