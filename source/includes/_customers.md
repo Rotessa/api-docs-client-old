@@ -168,7 +168,7 @@ ID  | The ID of the customer to retrieve
 ## Get a Specific Customer Based on Custom Identifier
 
 ```shell
-curl -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"custom_identifier": "MIKEY"}' <rotessa_endpoint>/customers/show_with_custom_identifier | python -m json.tool
+curl -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"custom_identifier": "MIKEY"}' <rotessa_endpoint>/customers/show_with_custom_identifier
 ```
 
 > The above command returns JSON structured like this:
@@ -478,11 +478,11 @@ ID | The ID of the customer to retrieve
 ## Update A Customer via POST
 
 ```canadian
-curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"id": 1, "custom_identifier": "new custom identifier", "email": "test@rotessa.com", "name": "MADE WITH API 4040", "bank_name": "Scotiabank", "transit_number": "11111", "institution_number": "333", "account_number": "23123132", "address": { "address_1": "123 Main Street", "address_2": "Unit 4", "city": "Toronto", "province_code": "QC", "postal_code": "M1B 0B7" }}' <rotessa_endpoint>/customers/update_via_post | python -m json.tool
+curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"id": 1, "custom_identifier": "new custom identifier", "email": "test@rotessa.com", "name": "MADE WITH API 4040", "bank_name": "Scotiabank", "transit_number": "11111", "institution_number": "333", "account_number": "23123132", "address": { "address_1": "123 Main Street", "address_2": "Unit 4", "city": "Toronto", "province_code": "QC", "postal_code": "M1B 0B7" }}' <rotessa_endpoint>/customers/update_via_post
 ```
 
 ```united_states
-curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"id": 1, "custom_identifier": "new custom identifier", "email": "test@rotessa.com", "name": "MADE WITH API 4040", "bank_name": "Scotiabank", "routing_number": "111111111", "account_number": "23123132", "address": { "address_1": "123 Main Street", "address_2": "Unit 4", "city": "Birmingham", "province_code": "AL", "postal_code": "36016" }}' <rotessa_endpoint>/customers/update_via_post | python -m json.tool
+curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"id": 1, "custom_identifier": "new custom identifier", "email": "test@rotessa.com", "name": "MADE WITH API 4040", "bank_name": "Scotiabank", "routing_number": "111111111", "account_number": "23123132", "address": { "address_1": "123 Main Street", "address_2": "Unit 4", "city": "Birmingham", "province_code": "AL", "postal_code": "36016" }}' <rotessa_endpoint>/customers/update_via_post
 ```
 
 > The above command returns JSON structured like this:

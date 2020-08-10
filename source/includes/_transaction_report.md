@@ -1,11 +1,11 @@
 # Transaction Report
 
-The transaction report endpoint is the main interface by which your system can determine the current state of payments processed by Rotessa. The transaction report is limited to transcations 3 years into the futre or 1000 transactions, whichever comes first.
+The transaction report endpoint is the main interface by which your system can determine the current state of payments processed by Rotessa. The transaction report is limited to transcations 3 years into the future and is paginated, showing up to 1000 transactions per page.
 
 ## Show Transaction Report
 
 ```shell
-curl -X GET -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"start_date":"2018-09-12", "end_date":"2019-03-12", "filter":"All"}' <rotessa_endpoint>/transaction_report | python -m json.tool 
+curl -X GET -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"start_date":"2018-09-12", "end_date":"2019-03-12", "filter":"All", "page":1}' <rotessa_endpoint>/transaction_report
 ```
 
 >The above command returns JSON structured like this:
