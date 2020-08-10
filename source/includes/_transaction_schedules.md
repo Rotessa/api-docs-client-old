@@ -39,7 +39,7 @@ Transaction schedules have an optional installments parameter that allow you to 
 ## Get A Specific Transaction Schedule
 
 ```shell
-curl "<rotessa_endpoint>/transaction_schedules/<ID>" -H "Authorization: Token token=\"<api_key>\"" | python -m json.tool
+curl "<rotessa_endpoint>/transaction_schedules/<ID>" -H "Authorization: Token token=\"<api_key>\""
 ```
 
 >The above command returns JSON structured like this:
@@ -74,7 +74,7 @@ ID | The ID of the transaction schedule to retrieve
 ## Create A Transaction Schedule with Rotessa Customer ID
 
 ```shell
-curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\""  -d '{"customer_id":1, "amount": 100, "frequency": "Monthly", "process_date": "November 24, 2017", "comment": "Membership fees"}' <rotessa_endpoint>/transaction_schedules | python -m json.tool
+curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\""  -d '{"customer_id":1, "amount": 100, "frequency": "Monthly", "process_date": "November 24, 2017", "comment": "Membership fees"}' <rotessa_endpoint>/transaction_schedules
 ```
 
 >The above command returns JSON structured like this:
@@ -178,7 +178,7 @@ American customers require <code>bank_account_type</code>, <code>authorization_t
 ## Update A Specific Transaction Schedule with Custom Identifier
 
 ```shell
-curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\""  -d '{"customer_identifier":"MIKEY", "amount": 100, "frequency": "Monthly", "process_date": "November 24, 2019", "comment": "Membership fees"}' <rotessa_endpoint>/transaction_schedules/create_with_custom_identifier | python -m json.tool
+curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\""  -d '{"customer_identifier":"MIKEY", "amount": 100, "frequency": "Monthly", "process_date": "November 24, 2019", "comment": "Membership fees"}' <rotessa_endpoint>/transaction_schedules/create_with_custom_identifier
 ```
 
 >The above command returns JSON structured like this:
@@ -217,7 +217,7 @@ Once a schedule is created, you may only modify the amount and comment values.
 ## Update A Specific Transaction Schedule with Transaction ID
 
 ```shell
-curl -X PATCH -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"customer_id":1, "amount": 150, "comment": "New Membership fees"}' <rotessa_endpoint>/transaction_schedules/435191 | python -m json.tool
+curl -X PATCH -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"customer_id":1, "amount": 150, "comment": "New Membership fees"}' <rotessa_endpoint>/transaction_schedules/435191
 ```
 
 >The above command returns JSON structured like this:
@@ -256,7 +256,7 @@ Once a schedule is created, you may only modify the amount and comment values.
 ## Update A Specific Transaction Schedule with Transaction ID via POST
 
 ```shell
-curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"customer_id":1, "amount": 150, "comment": "New Membership fees"}' <rotessa_endpoint>/transaction_schedules/<ID> | python -m json.tool
+curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"customer_id":1, "amount": 150, "comment": "New Membership fees"}' <rotessa_endpoint>/transaction_schedules/<ID>
 ```
 
 >The above command returns JSON structured like this:
