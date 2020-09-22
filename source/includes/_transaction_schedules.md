@@ -1,6 +1,6 @@
 # Transaction Schedules
 
-Transaction schedules are the method by which recurring or one time payments are scheduled in Rotessa for a customer. Payments require a schedule date, which must be at least 2 business days in the future, as well as a frequency.
+Transaction schedules are the method by which recurring or one time payments are scheduled in Rotessa for a customer. Payments require a schedule date, which must be in the future, as well as a frequency.
 
 <aside class="notice">
 A customer must have bank information complete in order to make a transaction schedule for them. 
@@ -112,7 +112,7 @@ installments | The number of installments. If value is excluded, schedule is ind
 comment | Optional comment for schedule
 
 <aside class="notice">
-When creating schedules you must specify a process date of at least 2 business days in the future.
+When creating schedules you must specify a process date in the future.
 </aside>
 
 <aside class="notice">
@@ -164,7 +164,7 @@ installments | The number of installments. If value is excluded, schedule is ind
 comment | Optional comment for schedule
 
 <aside class="notice">
-When creating schedules you must specify a process date of at least 2 business days in the future.
+When creating schedules you must specify a process date in the future.
 </aside>
 
 <aside class="notice">
