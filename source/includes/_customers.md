@@ -463,7 +463,7 @@ curl -X PATCH -H 'Content-Type: application/json' -H "Authorization: Token token
 }
 ```
 
-This endpoint creates a new customer
+This endpoint updates a customer
 
 ### HTTP REQUEST
 
@@ -577,7 +577,7 @@ curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=
 }
 ```
 
-This endpoint creates a new customer
+This endpoint updates a customer
 
 ### HTTP REQUEST
 
