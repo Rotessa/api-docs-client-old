@@ -109,7 +109,22 @@ curl "<rotessa_endpoint>/customers/<id>" -H "Authorization: Token token=\"<api_k
     "name": "Mike Smith",
     "phone": "(204) 555 4444",
     "routing_number": "",
-    "transaction_schedules": [],
+    "transaction_schedules": 
+        [
+            {
+                "active": true,
+                "amount": "150.00",
+                "comment": "New Membership fees",
+                "created_at": "2019-04-29T14:55:16.000-05:00",
+                "financial_transactions": [],
+                "frequency": "Monthly",
+                "id": 435191,
+                "installments": null,
+                "next_process_date": "2019-11-24",
+                "process_date": "2019-11-24",
+                "updated_at": "2019-04-29T14:58:29.000-05:00"
+            }
+        ],
     "transit_number": "11111",
     "updated_at": "2015-02-10T23:50:45.000-06:00"
 }
@@ -142,7 +157,21 @@ curl "<rotessa_endpoint>/customers/<id>" -H "Authorization: Token token=\"<api_k
     "name": "Mike Smith",
     "phone": "(204) 555 4444",
     "routing_number": "111111111",
-    "transaction_schedules": [],
+    "transaction_schedules":
+        [
+            {
+                "active": true,
+                "amount": "150.00",
+                "comment": "New Membership fees",
+                "created_at": "2019-04-29T14:55:16.000-05:00",
+                "frequency": "Monthly",
+                "id": 435191,
+                "installments": null,
+                "next_process_date": "2019-11-24",
+                "process_date": "2019-11-24",
+                "updated_at": "2019-04-29T14:58:29.000-05:00"
+            }
+        ],
     "transit_number": "",
     "updated_at": "2015-02-10T23:50:45.000-06:00"
 }
@@ -294,7 +323,20 @@ curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=
     "name": "Mike Smith",
     "phone": "(204) 555 4444",
     "routing_number": "",
-    "transaction_schedules": [],
+    "transaction_schedules": [
+        {
+            "active": true,
+            "amount": "150.00",
+            "comment": "New Membership fees",
+            "created_at": "2019-04-29T14:55:16.000-05:00",
+            "frequency": "Monthly",
+            "id": 435191,
+            "installments": null,
+            "next_process_date": "2019-11-24",
+            "process_date": "2019-11-24",
+            "updated_at": "2019-04-29T14:58:29.000-05:00"
+        }
+    ],
     "transit_number": "11111",
     "updated_at": "2015-02-10T23:50:45.000-06:00"
 }
@@ -319,7 +361,28 @@ curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=
     "custom_identifier": "Mikey",
     "customer_type": "Personal",
     "email": "mikesmith@test.com",
-    "financial_transactions": [],
+    "financial_transactions": [
+        {
+            "account_number": "*******23",
+            "amount": "150.00",
+            "comment": "",
+            "created_at": "2020-12-04T16:03:21.000-06:00",
+            "custom_identifier": null,
+            "customer_id": 182374,
+            "earliest_approval_date": "2020-12-08",
+            "id": 1950625,
+            "institution_number": "*23",
+            "process_date": "2020-12-04",
+            "settlement_date": "2020-12-08",
+            "status": "Declined",
+            "status_reason": "Edit Reject",
+            "transaction_number": "INV1980184",
+            "transaction_schedule_id": 435191,
+            "transit_number": "***45",
+            "updated_at": "2020-12-08T10:42:49.000-06:00",
+            "zapier_identifier": null
+        }
+    ],
     "home_phone": "(204) 555 5555",
     "id": 1,
     "identifier": "Mikey",
@@ -327,7 +390,20 @@ curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=
     "name": "Mike Smith",
     "phone": "(204) 555 4444",
     "routing_number": "111111111",
-    "transaction_schedules": [],
+    "transaction_schedules": [
+        {
+            "active": true,
+            "amount": "150.00",
+            "comment": "New Membership fees",
+            "created_at": "2019-04-29T14:55:16.000-05:00",
+            "frequency": "Monthly",
+            "id": 435191,
+            "installments": null,
+            "next_process_date": "2019-11-24",
+            "process_date": "2019-11-24",
+            "updated_at": "2019-04-29T14:58:29.000-05:00"
+        }
+    ],
     "transit_number": "",
     "updated_at": "2015-02-10T23:50:45.000-06:00"
 }
@@ -392,7 +468,28 @@ curl -X PATCH -H 'Content-Type: application/json' -H "Authorization: Token token
     "custom_identifier": "Mikey",
     "customer_type": "Personal",
     "email": "test@rotessa.com",
-    "financial_transactions": [],
+    "financial_transactions": [
+        {
+            "account_number": "*******23",
+            "amount": "150.00",
+            "comment": "",
+            "created_at": "2020-12-04T16:03:21.000-06:00",
+            "custom_identifier": null,
+            "customer_id": 182374,
+            "earliest_approval_date": "2020-12-08",
+            "id": 1950625,
+            "institution_number": "*23",
+            "process_date": "2020-12-04",
+            "settlement_date": "2020-12-08",
+            "status": "Declined",
+            "status_reason": "Edit Reject",
+            "transaction_number": "INV1980184",
+            "transaction_schedule_id": 435191,
+            "transit_number": "***45",
+            "updated_at": "2020-12-08T10:42:49.000-06:00",
+            "zapier_identifier": null
+        }
+    ],
     "home_phone": "(204) 555 5555",
     "id": 1,
     "identifier": "Mikey",
@@ -402,6 +499,7 @@ curl -X PATCH -H 'Content-Type: application/json' -H "Authorization: Token token
     "routing_number": "",
     "transaction_schedules": [
     	{
+            "active": true,
             "amount": "123.00",
             "comment": "",
             "created_at": "2019-04-16T14:40:38.000-05:00",
@@ -437,7 +535,28 @@ curl -X PATCH -H 'Content-Type: application/json' -H "Authorization: Token token
     "custom_identifier": "MIKEY",
     "customer_type": "Personal",
     "email": "test@rotessa.com",
-    "financial_transactions": [],
+    "financial_transactions": [
+        {
+            "account_number": "*******23",
+            "amount": "150.00",
+            "comment": "",
+            "created_at": "2020-12-04T16:03:21.000-06:00",
+            "custom_identifier": null,
+            "customer_id": 182374,
+            "earliest_approval_date": "2020-12-08",
+            "id": 1950625,
+            "institution_number": "*23",
+            "process_date": "2020-12-04",
+            "settlement_date": "2020-12-08",
+            "status": "Declined",
+            "status_reason": "Edit Reject",
+            "transaction_number": "INV1980184",
+            "transaction_schedule_id": 435191,
+            "transit_number": "***45",
+            "updated_at": "2020-12-08T10:42:49.000-06:00",
+            "zapier_identifier": null
+        }
+    ],
     "home_phone": "(204) 555 5555",
     "id": 1,
     "identifier": "Mikey",
@@ -447,6 +566,7 @@ curl -X PATCH -H 'Content-Type: application/json' -H "Authorization: Token token
     "routing_number": "111111111",
     "transaction_schedules": [
         {
+            "active": true,
             "amount": "123.00",
             "comment": "",
             "created_at": "2019-04-16T14:40:38.000-05:00",
@@ -506,7 +626,28 @@ curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=
     "custom_identifier": "new custom identifier",
     "customer_type": "Personal",
     "email": "test@rotessa.com",
-    "financial_transactions": [],
+    "financial_transactions":[
+        {
+            "account_number": "*******23",
+            "amount": "150.00",
+            "comment": "",
+            "created_at": "2020-12-04T16:03:21.000-06:00",
+            "custom_identifier": null,
+            "customer_id": 182374,
+            "earliest_approval_date": "2020-12-08",
+            "id": 1950625,
+            "institution_number": "*23",
+            "process_date": "2020-12-04",
+            "settlement_date": "2020-12-08",
+            "status": "Declined",
+            "status_reason": "Edit Reject",
+            "transaction_number": "INV1980184",
+            "transaction_schedule_id": 435191,
+            "transit_number": "***45",
+            "updated_at": "2020-12-08T10:42:49.000-06:00",
+            "zapier_identifier": null
+        }
+    ],
     "home_phone": "(204) 555 5555",
     "id": 1,
     "identifier": "Mikey",
@@ -516,6 +657,7 @@ curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=
     "routing_number": "",
     "transaction_schedules": [
         {
+            "active": true,
             "amount": "123.00",
             "comment": "",
             "created_at": "2019-04-16T14:40:38.000-05:00",
@@ -561,6 +703,7 @@ curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=
     "routing_number": "111111111",
     "transaction_schedules": [
         {
+            "active": true,
             "amount": "123.00",
             "comment": "",
             "created_at": "2019-04-16T14:40:38.000-05:00",
