@@ -46,6 +46,7 @@ curl "<rotessa_endpoint>/transaction_schedules/<ID>" -H "Authorization: Token to
 
 ```json
 {
+    "active": true,
     "amount": "123.00",
     "comment": "",
     "created_at": "2019-04-16T14:40:38.000-05:00",
@@ -81,6 +82,7 @@ curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=
 
 ```json
 {
+    "active": true,
     "amount": "100.00",
     "comment": "Membership fees (Created with API)",
     "created_at": "2017-04-29T13:31:54.000-05:00",
@@ -133,6 +135,7 @@ curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=
 
 ```json
 {
+    "active": true,
     "amount": "100.00",
     "comment": "Membership fees (Created with API)",
     "created_at": "2019-04-29T15:45:18.000-05:00",
@@ -185,16 +188,38 @@ curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=
 
 ```json
 {
+    "active": true,
     "amount": "100.00",
     "comment": "Membership fees (Created with API)",
-    "created_at": "2019-04-29T15:46:03.000-05:00",
-    "financial_transactions": [],
+    "created_at": "2019-10-20T15:46:03.000-05:00",
+    "financial_transactions": [
+        {
+            "account_number": "*******23",
+            "amount": "100.00",
+            "comment": "",
+            "created_at": "2019-10-24T16:03:21.000-06:00",
+            "custom_identifier": null,
+            "customer_id": 182374,
+            "earliest_approval_date": "2019-10-31",
+            "id": 1950625,
+            "institution_number": "*23",
+            "process_date": "2019-10-24",
+            "settlement_date": "2019-10-31",
+            "status": "Declined",
+            "status_reason": "Edit Reject",
+            "transaction_number": "INV1980184",
+            "transaction_schedule_id": 435195,
+            "transit_number": "***45",
+            "updated_at": "2019-10-31T10:42:49.000-06:00",
+            "zapier_identifier": null
+        }
+    ],
     "frequency": "Monthly",
     "id": 435195,
     "installments": null,
     "next_process_date": "2019-11-24",
     "process_date": "2019-11-24",
-    "updated_at": "2019-04-29T15:46:03.000-05:00"
+    "updated_at": "2019-10-20T15:46:03.000-05:00"
 }
 ```
 
@@ -224,6 +249,7 @@ curl -X PATCH -H 'Content-Type: application/json' -H "Authorization: Token token
 
 ```json
 {
+    "active": true,
     "amount": "150.00",
     "comment": "New Membership fees",
     "created_at": "2019-04-29T14:55:16.000-05:00",
@@ -263,6 +289,7 @@ curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=
 
 ```json
 {
+    "active": true,
     "amount": "150.00",
     "comment": "New Membership fees",
     "created_at": "2019-04-29T14:55:16.000-05:00",
