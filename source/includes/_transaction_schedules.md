@@ -59,7 +59,7 @@ curl "<rotessa_endpoint>/transaction_schedules/<ID>" -H "Authorization: Token to
 }
 ```
 
-This endpoint creates a transaction schedule for a customer.
+This endpoint retrieves a specific transaction schedule.
 
 ### HTTP REQUEST
 
