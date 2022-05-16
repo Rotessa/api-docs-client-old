@@ -5,7 +5,7 @@ The transaction report endpoint is the main interface by which your system can d
 ## Show Transaction Report
 
 ```shell
-curl -X GET -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"start_date":"2018-09-12", "end_date":"2019-03-12", "filter":"All", "page":1}' <rotessa_endpoint>/transaction_report
+curl -X GET -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"start_date":"2018-09-12", "end_date":"2019-03-12", "status":"All", "page":1}' <rotessa_endpoint>/transaction_report
 ```
 
 >The above command returns JSON structured like this:
