@@ -175,45 +175,6 @@ Canadian customers require <code>institution_number</code>, <code>transit_number
 American customers require <code>bank_account_type</code>, <code>authorization_type</code>, <code>routing_number</code>, and <code>account_number</code>.
 </aside>
 
-## Update A Specific Transaction Schedule with Custom Identifier
-
-```shell
-curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\""  -d '{"customer_identifier":"MIKEY", "amount": 100, "frequency": "Monthly", "process_date": "November 24, 2019", "comment": "Membership fees"}' <rotessa_endpoint>/transaction_schedules/create_with_custom_identifier
-```
-
->The above command returns JSON structured like this:
-
-```json
-{
-    "amount": "100.00",
-    "comment": "Membership fees (Created with API)",
-    "created_at": "2019-04-29T15:46:03.000-05:00",
-    "financial_transactions": [],
-    "frequency": "Monthly",
-    "id": 435195,
-    "installments": null,
-    "next_process_date": "2019-11-24",
-    "process_date": "2019-11-24",
-    "updated_at": "2019-04-29T15:46:03.000-05:00"
-}
-```
-
-This endpoint updates a transaction schedule for a customer.
-
-### HTTP REQUEST
-
-`POST https://api.rotessa.com/v1/transaction_schedules/create_with_custom_identifier`
-
-### URL PARAMETERS
-Parameter  | Description 
- ------------- | ------------- 
-id | The ID of the transaction schedule to retrieve
-comment | Optional comment for schedule
-
-<aside class="notice">
-Once a schedule is created, you may only modify the amount and comment values.
-</aside>
-
 ## Update A Specific Transaction Schedule with Transaction ID
 
 ```shell
@@ -247,6 +208,7 @@ This endpoint updates a transaction schedule for a customer.
 Parameter  | Description 
  ------------- | ------------- 
 id | The ID of the transaction schedule to retrieve
+amount | Amount for schedule
 comment | Optional comment for schedule
 
 <aside class="notice">
@@ -256,7 +218,7 @@ Once a schedule is created, you may only modify the amount and comment values.
 ## Update A Specific Transaction Schedule with Transaction ID via POST
 
 ```shell
-curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"customer_id":1, "amount": 150, "comment": "New Membership fees"}' <rotessa_endpoint>/transaction_schedules/<ID>
+curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"id":12345, "customer_id":1, "amount": 150, "comment": "New Membership fees"}' <rotessa_endpoint>/transaction_schedules/update_via_post
 ```
 
 >The above command returns JSON structured like this:
@@ -280,18 +242,18 @@ This endpoint updates a transaction schedule for a customer.
 
 ### HTTP REQUEST
 
-`POST https://api.rotessa.com/v1/transaction_schedules/<ID>`
+`POST https://api.rotessa.com/v1/transaction_schedules/update_via_post`
 
 ### URL PARAMETERS
 Parameter  | Description 
  ------------- | ------------- 
 id | The ID of the transaction schedule to retrieve
+amount | Amount for schedule
 comment | Optional comment for schedule
 
 <aside class="notice">
 Once a schedule is created, you may only modify the amount and comment values.
 </aside>
-
 
 ## Delete A Specific Transaction Schedule
 
