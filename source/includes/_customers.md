@@ -589,16 +589,128 @@ Parameter  | Description
  ------------- | ------------- 
 ID | The ID of the customer to retrieve
 
+## Update a Customer Based on Custom Identifier
+```canadian
+curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"custom_identifier": "new custom identifier", "email": "test@rotessa.com", "name": "MADE WITH API 4040", "bank_name": "Scotiabank", "transit_number": "11111", "institution_number": "333", "account_number": "23123132", "address": { "address_1": "123 Main Street", "address_2": "Unit 4", "city": "Toronto", "province_code": "QC", "postal_code": "M1B 0B7" }}' <rotessa_endpoint>/customers/update_with_identifier
+```
+
+```united_states
+curl -X POST -H 'Content-Type: application/json' -H "Authorization: Token token=\"<api_key>\"" -d '{"custom_identifier": "new custom identifier", "email": "test@rotessa.com", "name": "MADE WITH API 4040", "bank_name": "Scotiabank", "routing_number": "111111111", "account_number": "23123132", "address": { "address_1": "123 Main Street", "address_2": "Unit 4", "city": "Birmingham", "province_code": "AL", "postal_code": "36016" }}' <rotessa_endpoint>/customers/update_with_identifier
+```
+
+> The above command returns JSON structured like this:
 
 
+```canadian
+{
+    "account_number": "23123132"
+    "active": true,
+    "address": {
+        "address_1": "123 Main Street",
+        "address_2": "Unit 4",
+        "city": "Toronto",
+        "id": 5,
+        "postal_code": "M1B 0B7",
+        "province_code": "QC"
+    },
+    "authorization_type": null,
+    "bank_account_type": null,
+    "bank_name": "Scotiabank",
+    "created_at": "2015-02-10T23:50:45.000-06:00",
+    "custom_identifier": "new custom identifier",
+    "customer_type": "Personal",
+    "email": "test@rotessa.com",
+    "financial_transactions": [],
+    "home_phone": "(204) 555 5555",
+    "id": 1,
+    "identifier": "Mikey",
+    "institution_number": "333",
+    "name": "MADE WITH API 4040",
+    "phone": "(204) 555 4444",
+    "routing_number": "",
+    "transaction_schedules": [
+        {
+            "amount": "123.00",
+            "comment": "",
+            "created_at": "2019-04-16T14:40:38.000-05:00",
+            "frequency": "Once",
+            "id": 333215,
+            "installments": 1,
+            "next_process_date": "2019-04-16",
+            "process_date": "2019-04-16",
+            "updated_at": "2019-04-16T14:40:38.000-05:00"
+        }
+    ],
+    "transit_number": "11111",
+    "updated_at": "2015-05-18T12:23:58.739-05:00"
+}
+```
 
+```united_states
+{
+    "account_number": "23123132"
+    "active": true,
+    "address": {
+        "address_1": "123 Main Street",
+        "address_2": "Unit 4",
+        "city": "Birmingham",
+        "id": 114397,
+        "postal_code": "36016",
+        "province_code": "AL"
+    },
+    "authorization_type": "Online",
+    "bank_account_type": "Checking",
+    "bank_name": "Scotiabank",
+    "created_at": "2015-02-10T23:50:45.000-06:00",
+    "custom_identifier": "new custom identifier",
+    "customer_type": "Personal",
+    "email": "test@rotessa.com",
+    "financial_transactions": [],
+    "home_phone": "(204) 555 5555",
+    "id": 1,
+    "identifier": "Mikey",
+    "institution_number": "",
+    "name": "MADE WITH API 4040",
+    "phone": "(204) 555 4444",
+    "routing_number": "111111111",
+    "transaction_schedules": [
+        {
+            "amount": "123.00",
+            "comment": "",
+            "created_at": "2019-04-16T14:40:38.000-05:00",
+            "frequency": "Once",
+            "id": 333215,
+            "installments": 1,
+            "next_process_date": "2019-04-16",
+            "process_date": "2019-04-16",
+            "updated_at": "2019-04-16T14:40:38.000-05:00"
+        }
+    ],
+    "transit_number": "",
+    "updated_at": "2015-05-18T12:23:58.739-05:00"
+}
+```
 
+This endpoint updates a customer
 
+### HTTP REQUEST
 
+`POST https://api.rotessa.com/v1/customers/update_with_identifier`
 
-
-
-
-
-
-
+### POST PARAMETERS
+| Parameter          | Required | Description                                              |
+| ------------------ | -------- | -------------------------------------------------------- |
+| custom_identifier  | TRUE     | Your own unique customer identifier                      |
+| name               | FALSE    | Full name of customer                                    |
+| email              | FALSE    | Customer email address                                   |
+| customer_type      | FALSE    | Personal or Business                                     |
+| home_phone         | FALSE    | Home phone number                                        |
+| cell_phone         | FALSE    | Cell phone number                                        |
+| bank_name          | FALSE    | Bank name                                                |
+| institution_number | FALSE    | Bank institution number for Canadian customers           |
+| transit_number     | FALSE    | Bank transit number for Canadian customers               |
+| bank_account_type  | FALSE    | "Savings" or "Checking" for American customers           |
+| authorization_type | FALSE    | "In Person" or "Online" for American customers           |
+| routing_number     | FALSE    | Bank routing number for American customers               |
+| account_number     | FALSE    | Bank account number                                      |
+| address            | FALSE    | Customer address                                         |
